@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "AudioKit",
+        "repositoryURL": "https://github.com/AudioKit/AudioKit.git",
+        "state": {
+          "branch": "v5-develop",
+          "revision": "d2889c3d8b598fabeeaec30aee72ebce66310752",
+          "version": null
+        }
+      },
+      {
+        "package": "Dunesailer Utilities",
+        "repositoryURL": "https://github.com/dunesailer/Utilities.git",
+        "state": {
+          "branch": null,
+          "revision": "ae8dca65655f809fdd3734a6cbb3d82fcd7920bd",
+          "version": "0.9.2"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
