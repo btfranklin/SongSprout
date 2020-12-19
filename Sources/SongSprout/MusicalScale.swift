@@ -29,13 +29,20 @@ struct MusicalScale {
         var currentOctave = lowOctave
         var previousPitch: Pitch?
         while currentOctave <= highOctave {
+            var notesPlacedInOctave = 0
             for keyName in keyNames {
                 var pitch = Pitch(key: keyName, octave: currentOctave)
                 if previousPitch?.midiNoteNumber ?? 0 > pitch.midiNoteNumber {
                     currentOctave += 1
                     pitch = Pitch(key: keyName, octave: currentOctave)
+
+                    // If we're doing this and we haven't placed any notes in this octave, don't go through with it
+                    if notesPlacedInOctave == 0 {
+                        break
+                    }
                 }
                 pitches.append(pitch)
+                notesPlacedInOctave += 1
                 previousPitch = pitch
             }
         }
