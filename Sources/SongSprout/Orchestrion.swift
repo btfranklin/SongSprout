@@ -57,7 +57,7 @@ public class Orchestrion {
         ])
 
         tempo = UserDefaults.standard.double(forKey: "tempo")
-        volume = Volume(userValue: UserDefaults.standard.double(forKey: "volume"))
+        volume = Volume(UserDefaults.standard.double(forKey: "volume"))
 
         mainMixer = Mixer(name: "Orchestrion Mixer")
         let compressor = Compressor(mainMixer)
@@ -126,8 +126,6 @@ public class Orchestrion {
         }
 
         internalPlaybackState = .playing
-
-        print(engine.connectionTreeDescription)
     }
 
     public func stop() {

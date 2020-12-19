@@ -4,32 +4,26 @@ import AudioKit
 
 struct BassTrackDefinition: TrackDefinition {
     
-    let genotype: BassPartGenotype
-    
     let identifier: PartIdentifier = .bass
+    let volume = Volume(0.6)
+
+    let genotype: BassPartGenotype
     
     init(for genotype: BassPartGenotype) {
         self.genotype = genotype
     }
     
     func createNode() -> Node {
-        let bass = MIDISampler(name: "Bass")
+        let bass = MIDISampler(name: identifier.rawValue)
         do {
             let instrument = GeneralUserInstrumentDetails.shared.instrumentDetails[genotype.instrumentName]!
             try bass.loadSoundFont(GLOBAL_SOUNDFONT_NAME,
                                    preset: instrument.preset,
-                                   bank: instrument.bank)
+                                   bank: instrument.bank,
+                                   in: .module)
         } catch {
             print("Error while loading Sound Font in BassTrackDefinition: \(error)")
         }
         return bass
     }
-    
-    func createRoute(from signalNode: Node, to mixerNode: Mixer) {
-        let compressor = Compressor(signalNode)
-        let localMixer = Mixer(compressor, name: "Bass Mixer")
-        localMixer.volume = Volume(userValue: 0.6).mixerValue
-        mixerNode.addInput(localMixer)
-    }
-    
 }

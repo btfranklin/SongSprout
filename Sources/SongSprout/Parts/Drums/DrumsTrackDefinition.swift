@@ -4,19 +4,21 @@ import AudioKit
 
 struct DrumsTrackDefinition: TrackDefinition {
     
+    let identifier: PartIdentifier = .drums
+    let volume = Volume(0.7)
+
     let genotype: DrumsPartGenotype
 
-    let identifier: PartIdentifier = .drums
-    
     init(for genotype: DrumsPartGenotype) {
         self.genotype = genotype
     }
     
     func createNode() -> Node {
-        let drums = MIDISampler(name: "Drums")
+        let drums = MIDISampler(name: identifier.rawValue)
         do {
             try drums.loadPercussiveSoundFont(GLOBAL_SOUNDFONT_NAME,
-                                              preset: genotype.drumKitPreset.rawValue)
+                                              preset: genotype.drumKitPreset.rawValue,
+                                              in: .module)
         } catch {
             print("Error while loading Sound Font in DrumsTrackDefinition: \(error)")
         }
@@ -41,9 +43,8 @@ struct DrumsTrackDefinition: TrackDefinition {
         }
         
         let dryWetMixer = DryWetMixer(signalNode, reverb, balance: genotype.reverbMix)
-        let localMixer = Mixer(dryWetMixer, name: "Drums Mixer")
-        localMixer.volume = Volume(userValue: 0.7).mixerValue
+        let localMixer = Mixer(dryWetMixer, name: "\(identifier.rawValue) Mixer")
+        localMixer.volume = self.volume.mixerValue
         mixerNode.addInput(localMixer)
     }
-    
 }
