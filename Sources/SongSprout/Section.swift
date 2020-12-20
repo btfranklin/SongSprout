@@ -71,9 +71,6 @@ class Section {
             let composer = AccompanimentPartComposer(for: self, in: song, using: partGenotype)
             composedPartSections.append(composer.composeIntro())
         }
-        
-        // taiko?
-        
     }
     
     private func composeFinale(in song: Song) {
