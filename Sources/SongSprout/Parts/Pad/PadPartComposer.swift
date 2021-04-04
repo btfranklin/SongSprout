@@ -20,7 +20,7 @@ struct PadPartComposer {
     }
     
     func composeNormal() -> ComposedPartSection {
-        var midiNoteData = [MIDINoteData]()
+        var midiNoteData: [MIDINoteData] = []
         
         let phraseData = composeNormalPhrase()
         for phraseNumber in 0..<section.descriptor.phraseCount {
@@ -39,7 +39,7 @@ struct PadPartComposer {
     
     // TODO un-private this and make it real
     private func composeIntro() -> ComposedPartSection {
-        var midiNoteData = [MIDINoteData]()
+        var midiNoteData: [MIDINoteData] = []
         
         for phraseNumber in 0..<section.descriptor.phraseCount {
             
@@ -72,7 +72,7 @@ struct PadPartComposer {
     }
 
     func composeFinale() -> ComposedPartSection {
-        var midiNoteData = [MIDINoteData]()
+        var midiNoteData: [MIDINoteData] = []
         
         let chordDescriptor = section.chordProgression.chordDescriptors.first!
         let chordPlacement = section.chordPlacementMapPerPhrase.chordPlacements.first!
@@ -91,7 +91,7 @@ struct PadPartComposer {
     }
     
     private func composeNormalPhrase() -> [MIDINoteData] {
-        var midiNoteData = [MIDINoteData]()
+        var midiNoteData: [MIDINoteData] = []
         
         var firstChord: Chord?
         for chordIndex in 0..<section.chordProgression.chordDescriptors.count {

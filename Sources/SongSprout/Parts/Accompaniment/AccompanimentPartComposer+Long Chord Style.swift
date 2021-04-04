@@ -6,7 +6,7 @@ import DunesailerUtilities
 extension AccompanimentPartComposer {
     
     func composeNormalPhraseUsingLongChordStyle() -> [MIDINoteData] {
-        var midiNoteData = [MIDINoteData]()
+        var midiNoteData: [MIDINoteData] = []
         
         for chordIndex in 0..<section.chordProgression.chordDescriptors.count {
             
@@ -28,7 +28,7 @@ extension AccompanimentPartComposer {
     }
     
     private func composeNormalLongChord(for chord: Chord, withDuration duration: Duration) -> [MIDINoteData] {
-        var midiNoteData = [MIDINoteData]()
+        var midiNoteData: [MIDINoteData] = []
         
         let isAccented = Bool.random(probability: partGenotype.accentProbability)
         

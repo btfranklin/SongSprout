@@ -22,7 +22,7 @@ struct BassPartComposer {
     }
     
     func composeNormal() -> ComposedPartSection {
-        var midiNoteData = [MIDINoteData]()
+        var midiNoteData: [MIDINoteData] = []
         
         var composedDrumsPartSection: ComposedPartSection?
         if partGenotype.style == .triesToFollowDrums {
@@ -66,7 +66,7 @@ struct BassPartComposer {
     }
 
     func composeFinale() -> ComposedPartSection {
-        var midiNoteData = [MIDINoteData]()
+        var midiNoteData: [MIDINoteData] = []
         
         let chordDescriptor = section.chordProgression.chordDescriptors.first!
         let chordPlacement = section.chordPlacementMapPerPhrase.chordPlacements.first!
@@ -85,13 +85,13 @@ struct BassPartComposer {
     }
 
     private func composePhrase(following composedDrumsPartSection: ComposedPartSection) -> [MIDINoteData] {
-        var midiNoteData = [MIDINoteData]()
+        var midiNoteData: [MIDINoteData] = []
         
         let drumsPartGenotype = song.genotype.drumsPartGenotype!
         let followSnare = Bool.random()
         
         // TODO: Investigate whether these positions match correctly
-        var drumPositions = [Duration]()
+        var drumPositions: [Duration] = []
         for midiNoteDatum in composedDrumsPartSection.midiNoteData {
             if midiNoteDatum.noteNumber == drumsPartGenotype.bassDrumGenotype.preset.rawValue {
                 drumPositions.append(midiNoteDatum.position)
@@ -121,7 +121,7 @@ struct BassPartComposer {
                                                to endPosition: Duration,
                                                for chord: Chord,
                                                following drumPositions: [Duration]) -> [MIDINoteData] {
-        var midiNoteData = [MIDINoteData]()
+        var midiNoteData: [MIDINoteData] = []
         
         var useLeadingNote = false
         for drumPosition in drumPositions {
@@ -150,7 +150,7 @@ struct BassPartComposer {
     }
     
     private func composePhraseFollowingChordChanges() -> [MIDINoteData] {
-        var midiNoteData = [MIDINoteData]()
+        var midiNoteData: [MIDINoteData] = []
         
         for chordIndex in 0..<section.chordProgression.chordDescriptors.count {
             let chordDescriptor = section.chordProgression.chordDescriptors[chordIndex]
@@ -168,7 +168,7 @@ struct BassPartComposer {
     }
     
     private func composePhraseFollowingMotif() -> [MIDINoteData] {
-        var midiNoteData = [MIDINoteData]()
+        var midiNoteData: [MIDINoteData] = []
         
         for chordIndex in 0..<section.chordProgression.chordDescriptors.count {
             let chordDescriptor = section.chordProgression.chordDescriptors[chordIndex]

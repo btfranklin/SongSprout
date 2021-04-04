@@ -21,7 +21,7 @@ struct LeadPartComposer {
     }
     
     func composeNormal() -> ComposedPartSection {
-        var midiNoteData = [MIDINoteData]()
+        var midiNoteData: [MIDINoteData] = []
         
         let phraseData = composeNormalPhrase()
         for phraseNumber in 0..<section.descriptor.phraseCount {
@@ -39,7 +39,7 @@ struct LeadPartComposer {
     }
     
     func composeIntro() -> ComposedPartSection {
-        var midiNoteData = [MIDINoteData]()
+        var midiNoteData: [MIDINoteData] = []
         
         let phraseData = composeIntroPhrase()
         for phraseNumber in 0..<section.descriptor.phraseCount {
@@ -57,7 +57,7 @@ struct LeadPartComposer {
     }
     
     func composeFinale() -> ComposedPartSection {
-        var midiNoteData = [MIDINoteData]()
+        var midiNoteData: [MIDINoteData] = []
         
         let chordDescriptor = section.chordProgression.chordDescriptors.first!
         let chordPlacement = section.chordPlacementMapPerPhrase.chordPlacements.first!
@@ -76,7 +76,7 @@ struct LeadPartComposer {
     }
     
     private func composeIntroPhrase() -> [MIDINoteData] {
-        var midiNoteData = [MIDINoteData]()
+        var midiNoteData: [MIDINoteData] = []
 
         var firstChord: Chord?
         for chordIndex in 0..<section.chordProgression.chordDescriptors.count {
@@ -104,12 +104,12 @@ struct LeadPartComposer {
     }
     
     private func composeNormalPhrase() -> [MIDINoteData] {
-        var midiNoteData = [MIDINoteData]()
+        var midiNoteData: [MIDINoteData] = []
         
         let pitches = song.scale.pitches(fromOctave: partGenotype.octave-1, toOctave: partGenotype.octave+1)
 
-        var motifsByDuration = [Double : Motif]()
-        var selectedMotifs = [Motif]()
+        var motifsByDuration: [Double : Motif] = [:]
+        var selectedMotifs: [Motif] = []
         let motifDurations = split(duration: section.descriptor.phraseDuration.beats)
         for motifDuration in motifDurations {
             if let motifForDuration = motifsByDuration[motifDuration] {
@@ -167,7 +167,7 @@ struct LeadPartComposer {
     }
     
     private func split(duration: Double) -> [Double] {
-        var durations = [Double]()
+        var durations: [Double] = []
         
         let shouldSplitFurther =
             duration > SectionDescriptor.MEASURE_DURATION.beats * 2 ||

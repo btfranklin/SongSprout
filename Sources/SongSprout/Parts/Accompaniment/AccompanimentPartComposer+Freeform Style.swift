@@ -26,7 +26,7 @@ extension AccompanimentPartComposer {
     ], enforcePercent: true)
     
     func composeNormalPhraseUsingFreeformStyle() -> [MIDINoteData] {
-        var midiNoteData = [MIDINoteData]()
+        var midiNoteData: [MIDINoteData] = []
         
         var firstChord: Chord?
         for chordIndex in 0..<section.chordProgression.chordDescriptors.count {
@@ -57,7 +57,7 @@ extension AccompanimentPartComposer {
     }
     
     private func composeNormalFreeformChord(for chord: Chord, withDuration duration: Duration) -> [MIDINoteData] {
-        var midiNoteData = [MIDINoteData]()
+        var midiNoteData: [MIDINoteData] = []
 
         var positionCursor = Duration(beats: 0)
         while positionCursor < duration {

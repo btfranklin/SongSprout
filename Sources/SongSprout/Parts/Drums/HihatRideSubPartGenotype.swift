@@ -28,13 +28,13 @@ public struct HihatRideSubPartGenotype: Codable {
     public init(complexity: Complexity,
                 uniqueMeasureCount: Int) {
         
-        var shortNoteMeasures = [[Double]]()
-        var longNoteMeasures = [[Double]]()
+        var shortNoteMeasures: [[Double]] = []
+        var longNoteMeasures: [[Double]] = []
         for _ in 1...uniqueMeasureCount {
             
             let isShortHihatRideForm = Bool.random()
-            var shortHihatRideMeasure = [Double]()
-            var longHihatRideMeasure = [Double]()
+            var shortHihatRideMeasure: [Double] = []
+            var longHihatRideMeasure: [Double] = []
             
             if isShortHihatRideForm {
                 switch complexity {

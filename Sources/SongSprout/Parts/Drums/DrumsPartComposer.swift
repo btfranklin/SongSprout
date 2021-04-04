@@ -27,7 +27,7 @@ struct DrumsPartComposer {
     }
     
     func composeNormal() -> ComposedPartSection {
-        var midiNoteData = [MIDINoteData]()
+        var midiNoteData: [MIDINoteData] = []
 
         let contextPhraseIndices = context.normalPhrases.randomElement()!
         let phraseMidiNoteData = generateNormalPhraseData(fromContextPhraseMeasureIndices: contextPhraseIndices)
@@ -61,7 +61,7 @@ struct DrumsPartComposer {
     }
 
     func composeFinale() -> ComposedPartSection {
-        var midiNoteData = [MIDINoteData]()
+        var midiNoteData: [MIDINoteData] = []
         
         midiNoteData.append(.init(noteNumber: partGenotype.bassDrumGenotype.preset.rawValue,
                                   velocity: DrumsPartComposer.NORMAL_VELOCITY,
@@ -87,7 +87,7 @@ struct DrumsPartComposer {
     }
 
     func composeIntro() -> ComposedPartSection {
-        var midiNoteData = [MIDINoteData]()
+        var midiNoteData: [MIDINoteData] = []
         
         let phraseMidiNoteData = generateIntroPhraseData()
         
@@ -104,7 +104,7 @@ struct DrumsPartComposer {
     }
     
     func composeSolo() -> ComposedPartSection {
-        var midiNoteData = [MIDINoteData]()
+        var midiNoteData: [MIDINoteData] = []
         
         var positionCursor: Duration = .init(beats: 0)
         while positionCursor < section.duration {
@@ -123,7 +123,7 @@ struct DrumsPartComposer {
     }
     
     private func generateNormalPhraseData(fromContextPhraseMeasureIndices contextPhraseMeasureIndices: [Int]) -> [MIDINoteData] {
-        var midiNoteData = [MIDINoteData]()
+        var midiNoteData: [MIDINoteData] = []
         
         let useRideCymbal = Bool.random(probability: partGenotype.hihatRideGenotype.rideCymbalProbability)
         let shortPreset: PercussionNoteNumber = useRideCymbal ? (Bool.random() ? .rideCymbal : .rideCymbal2) : .closedHiHat
@@ -238,7 +238,7 @@ struct DrumsPartComposer {
     }
     
     private func generateIntroPhraseData() -> [MIDINoteData] {
-        var midiNoteData = [MIDINoteData]()
+        var midiNoteData: [MIDINoteData] = []
         
         var measureOffset: Duration = .init(beats: 0)
         for _ in 1...section.measureCount {

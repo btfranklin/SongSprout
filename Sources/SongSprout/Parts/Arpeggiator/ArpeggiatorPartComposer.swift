@@ -21,7 +21,7 @@ struct ArpeggiatorPartComposer {
     
     func composeNormal() -> ComposedPartSection {
         
-        var midiNoteData = [MIDINoteData]()
+        var midiNoteData: [MIDINoteData] = []
         
         let noteDuration = Duration(beats: partGenotype.noteDurationOptions.randomElement()!)
         let sequenceLength = partGenotype.sequenceLengthOptions.randomElement()!
@@ -51,7 +51,7 @@ struct ArpeggiatorPartComposer {
     
     private func composeNormalPhraseFollowingChords(_ octave: Int, _ sequenceLength: Int, _ noteDuration: Duration) -> [MIDINoteData] {
         
-        var midiNoteData = [MIDINoteData]()
+        var midiNoteData: [MIDINoteData] = []
         
         var firstChord: Chord?
         for chordIndex in 0..<section.chordProgression.chordDescriptors.count {
@@ -97,7 +97,7 @@ struct ArpeggiatorPartComposer {
     
     private func composeNormalPhraseNotFollowingChords(_ octave: Int, _ sequenceLength: Int, _ noteDuration: Duration) -> [MIDINoteData] {
         
-        var midiNoteData = [MIDINoteData]()
+        var midiNoteData: [MIDINoteData] = []
         
         let chord = Chord(from: .init(scale: song.scale, rootScaleDegree: 0, components: [0,2,4,7]), octave: octave)
         
@@ -128,7 +128,7 @@ struct ArpeggiatorPartComposer {
     }
     
     private func createPitchSequence(from chord: Chord, withCount pitchCount: Int, usingOrderingStyle pitchOrderingStyle: ArpeggioPitchOrderingStyle) -> [Pitch] {
-        var pitchSequence = [Pitch]()
+        var pitchSequence: [Pitch] = []
         
         let chordPitches: [Pitch]
         

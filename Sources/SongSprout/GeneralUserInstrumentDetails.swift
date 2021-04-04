@@ -8,7 +8,7 @@ class GeneralUserInstrumentDetails {
     
     private init() {
         
-        var instrumentDetails = [String:InstrumentDetails]()
+        var instrumentDetails: [String:InstrumentDetails] = [:]
         
         var instrumentDetailsItems = Set<InstrumentDetails>()
         instrumentDetailsItems.insert(.init(

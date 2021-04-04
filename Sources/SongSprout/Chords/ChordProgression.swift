@@ -8,7 +8,7 @@ struct ChordProgression {
          scale: MusicalScale,
          key: MusicalKeyName) {
         
-        var chordDescriptors = [ChordDescriptor]()
+        var chordDescriptors: [ChordDescriptor] = []
         
         for chordFunctionCategory in chordFunctionCategorySequence.chordFunctionCategories {
             

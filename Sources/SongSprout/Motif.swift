@@ -50,7 +50,7 @@ struct Motif {
             durationInBeats = SectionDescriptor.MEASURE_DURATION.beats * 2
         }
         
-        var notes = [Note]()
+        var notes: [Note] = []
         var previousPitch: MotifPitch?
         let durations = Motif.split(duration: durationInBeats, for: complexity)
         for duration in durations {
@@ -165,7 +165,7 @@ struct Motif {
     }
     
     private static func split(duration: Double, for complexity: Complexity) -> [Double] {
-        var durations = [Double]()
+        var durations: [Double] = []
         
         let finalGranularity: Double
         switch complexity {
@@ -193,7 +193,7 @@ struct Motif {
                                    on channel: PartChannel,
                                    with velocity: MIDIVelocity,
                                    using pitches: [Pitch]) -> [MIDINoteData] {
-        var midiNoteData = [MIDINoteData]()
+        var midiNoteData: [MIDINoteData] = []
 
         let chordPitchIndices = chord.pitches.map {pitch in
             pitches.firstIndex(of: pitch)

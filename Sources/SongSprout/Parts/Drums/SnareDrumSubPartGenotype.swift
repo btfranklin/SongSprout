@@ -60,12 +60,12 @@ public struct SnareDrumSubPartGenotype: Codable {
             hasGhostHits = true
         }
         
-        var measures = [[Double]]()
-        var ghostMeasures = [[Double]]()
+        var measures: [[Double]] = []
+        var ghostMeasures: [[Double]] = []
         for measureIndex in 0..<uniqueMeasureCount {
             
-            var measure = [Double]()
-            var ghostMeasure = [Double]()
+            var measure: [Double] = []
+            var ghostMeasure: [Double] = []
             
             switch beatEmphasisStrategy {
             case .none:

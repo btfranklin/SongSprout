@@ -8,7 +8,7 @@ struct ChordPlacementMap {
     
     init(chordCount: Int, measureCount: Int, measureDuration: Duration) {
         
-        var durations = [Double]()
+        var durations: [Double] = []
         
         // This is effectively the placement of the first chord, filling the entire duration.
         durations.append(Double(measureCount) * measureDuration.beats)
@@ -30,7 +30,7 @@ struct ChordPlacementMap {
             }
         }
         
-        var chordPlacements = [(position: Duration, duration: Duration)]()
+        var chordPlacements: [(position: Duration, duration: Duration)] = []
         let chordAKDurations = durations.map {
             Duration(beats: $0)
         }

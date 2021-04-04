@@ -64,7 +64,7 @@ public struct MusicalGenotype: Codable {
         
         self.flowPattern = MusicalFlowPattern()
         
-        var chordFunctionCategorySequences = [ChordFunctionCategorySequence]()
+        var chordFunctionCategorySequences: [ChordFunctionCategorySequence] = []
         for _ in 1...2 {
             let sequenceLength = MusicalGenotype.chordFunctionCategorySequenceLengthBag.randomItem()!
             chordFunctionCategorySequences.append(ChordFunctionCategorySequence(length: sequenceLength))

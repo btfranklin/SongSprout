@@ -14,7 +14,7 @@ public struct ChordFunctionCategorySequence: Hashable, Codable {
             fatalError("ChordFunctionCategorySequence length must be in the range 1 through 6")
         }
         
-        var chordFunctionCategories = [ChordFunctionCategory]()
+        var chordFunctionCategories: [ChordFunctionCategory] = []
         
         for position in 1...length {
             if position == 1 {

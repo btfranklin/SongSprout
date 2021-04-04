@@ -11,11 +11,11 @@ class Song {
     
     let drumsPartContext: DrumsPartSongContext?
     
-    var tracksByIdentifier = [PartIdentifier: SequencerTrack]()
-    var sectionsByDesignation = [SectionDescriptor.Designation : Section]()
+    var tracksByIdentifier: [PartIdentifier: SequencerTrack] = [:]
+    var sectionsByDesignation: [SectionDescriptor.Designation : Section] = [:]
     
     lazy var trackDefinitions: [TrackDefinition] = {
-        var trackDefinitions = [TrackDefinition]()
+        var trackDefinitions: [TrackDefinition] = []
         
         for partIdentifier in genotype.partIdentifiers {
             switch partIdentifier {
@@ -107,7 +107,7 @@ class Song {
 
 extension Song {
     var description: String {
-        var designators = [String]()
+        var designators: [String] = []
         for sectionDescriptor in sectionDescriptors {
             designators.append(sectionDescriptor.designation.rawValue)
         }

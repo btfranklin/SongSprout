@@ -14,7 +14,7 @@ struct ChordDescriptor {
             fatalError("Attempted to construct Chord with scale degree \(rootScaleDegree) in \(scale)")
         }
         
-        var keyNames = [MusicalKeyName]()
+        var keyNames: [MusicalKeyName] = []
         for component in components {
             let scaleDegree = (rootScaleDegree + component) % scale.keyNames.count
             keyNames.append(scale.keyNames[scaleDegree])
@@ -25,7 +25,7 @@ struct ChordDescriptor {
 
 extension ChordDescriptor: CustomStringConvertible {
     var description: String {
-        var keyNames = [String]()
+        var keyNames: [String] = []
         for keyName in self.keyNames {
             keyNames.append(keyName.description)
         }

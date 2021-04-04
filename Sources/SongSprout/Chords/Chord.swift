@@ -32,7 +32,7 @@ struct Chord {
         self.root = .init(key: descriptor.keyNames.first!, octave: octave)
         self.inversion = inversion
         
-        var pitches = [Pitch]()
+        var pitches: [Pitch] = []
         for key in descriptor.keyNames {
             let pitch = Pitch(key: key, octave: octave)
             if pitches.last?.midiNoteNumber ?? 0 > pitch.midiNoteNumber {
@@ -59,7 +59,7 @@ struct Chord {
     func findClosestInversion(using chordDescriptor: ChordDescriptor) -> Chord {
         let inversionCount = chordDescriptor.keyNames.count-1
         
-        var inversionTuples = [(pitchCenterFrequencyDistance: Double, chord: Chord)]()
+        var inversionTuples: [(pitchCenterFrequencyDistance: Double, chord: Chord)] = []
         for inversion in -inversionCount...inversionCount {
             let inversionChord = Chord(from: chordDescriptor, octave: octave, inversion: inversion)
             let pitchCenterFrequencyDistance = abs(self.pitchCenterFrequency - inversionChord.pitchCenterFrequency)
@@ -82,7 +82,7 @@ struct Chord {
 
 extension Chord: CustomStringConvertible {
     var description: String {
-        var pitchStrings = [String]()
+        var pitchStrings: [String] = []
         for pitch in pitches {
             pitchStrings.append(pitch.description)
         }

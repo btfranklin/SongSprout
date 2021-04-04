@@ -10,7 +10,7 @@ struct MusicalScale {
         self.scaleType = scaleType
         
         let allKeyNames = MusicalKeyName.allCases
-        var keyNames = [MusicalKeyName]()
+        var keyNames: [MusicalKeyName] = []
         keyNames.append(key)
 
         var chromaticOffset = key.rawValue
@@ -24,7 +24,7 @@ struct MusicalScale {
     }
     
     func pitches(fromOctave lowOctave: Int, toOctave highOctave: Int) -> [Pitch] {
-        var pitches = [Pitch]()
+        var pitches: [Pitch] = []
         
         var currentOctave = lowOctave
         var previousPitch: Pitch?

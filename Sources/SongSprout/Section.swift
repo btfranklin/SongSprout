@@ -18,7 +18,7 @@ class Section {
     
     init(descriptor: SectionDescriptor, in song: Song) {
         self.descriptor = descriptor
-        self.composedPartSections = [ComposedPartSection]()
+        self.composedPartSections = []
         self.measureCount = descriptor.measuresInPhrase * descriptor.phraseCount
         
         if SectionDescriptor.NORMAL_DESIGNATIONS.contains(descriptor.designation) {

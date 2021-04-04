@@ -14,7 +14,7 @@ extension AccompanimentPartComposer {
     ], enforcePercent: true)
 
     func composeNormalPhraseUsingChordStyle() -> [MIDINoteData] {
-        var midiNoteData = [MIDINoteData]()
+        var midiNoteData: [MIDINoteData] = []
         
         var firstChord: Chord?
         for chordIndex in 0..<section.chordProgression.chordDescriptors.count {
@@ -45,11 +45,11 @@ extension AccompanimentPartComposer {
     }
     
     private func composeNormalChord(for chord: Chord, withDuration duration: Duration) -> [MIDINoteData] {
-        var midiNoteData = [MIDINoteData]()
+        var midiNoteData: [MIDINoteData] = []
         
         let isAccented = Bool.random(probability: partGenotype.accentProbability)
         
-        var notePlacements = [(location: Duration, duration: Duration)]()
+        var notePlacements: [(location: Duration, duration: Duration)] = []
         var availableDuration = duration
         var placementCursor = Duration(beats: 0.0)
         while availableDuration.beats > 0 {

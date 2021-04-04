@@ -28,12 +28,12 @@ public struct CymbalSubPartGenotype: Codable {
         hitOnPhraseStartProbability = Int.random(in: 75...100)
         hitOnPlacementProbability = Int.random(in: 0...100)
 
-        var primaryMeasures = [[Double]]()
-        var secondaryMeasures = [[Double]]()
+        var primaryMeasures: [[Double]] = []
+        var secondaryMeasures: [[Double]] = []
         for measureIndex in 0..<uniqueMeasureCount {
             
-            var primaryMeasure = [Double]()
-            var secondaryMeasure = [Double]()
+            var primaryMeasure: [Double] = []
+            var secondaryMeasure: [Double] = []
             
             var bassDrumMeasure = bassDrumGenotype.measures[measureIndex]
             var snareDrumMeasure = snareDrumGenotype.measures[measureIndex]

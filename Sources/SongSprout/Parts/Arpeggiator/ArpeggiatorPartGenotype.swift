@@ -67,7 +67,7 @@ public struct ArpeggiatorPartGenotype: Codable {
             0.125   :    10,
         ])
         
-        var noteDurationOptions = [Double]()
+        var noteDurationOptions: [Double] = []
         for _ in 1...noteDurationOptionCount {
             let option = noteDurationOptionPossibilitiesBag.randomItem()!
             noteDurationOptionPossibilitiesBag.removeAll(option)
@@ -81,7 +81,7 @@ public struct ArpeggiatorPartGenotype: Codable {
             8   :   100,
         ])
         
-        var sequenceLengthOptions = [Int]()
+        var sequenceLengthOptions: [Int] = []
         switch self.pitchOrderingStyle {
         case .rootAlternatingAscending, .rootAlternatingDescending:
             sequenceLengthOptions.append(8)

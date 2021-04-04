@@ -9,7 +9,7 @@ class DrumsPartSongContext {
         
         self.isDanceKit = partGenotype.drumKitPreset == .dance || partGenotype.drumKitPreset == .electronic
         
-        var normalPhrases = [[Int]]()
+        var normalPhrases: [[Int]] = []
         for _ in 1...partGenotype.uniquePhraseCount {
             var phrase: [Int]
             

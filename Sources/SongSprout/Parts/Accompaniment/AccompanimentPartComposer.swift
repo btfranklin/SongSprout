@@ -29,7 +29,7 @@ struct AccompanimentPartComposer {
     }
     
     func composeNormal() -> ComposedPartSection {
-        var midiNoteData = [MIDINoteData]()
+        var midiNoteData: [MIDINoteData] = []
         
         let phraseData = composeNormalPhrase()
         for phraseNumber in 0..<section.descriptor.phraseCount {
@@ -48,7 +48,7 @@ struct AccompanimentPartComposer {
     
     // TODO review implementation
     func composeIntro() -> ComposedPartSection {
-        var midiNoteData = [MIDINoteData]()
+        var midiNoteData: [MIDINoteData] = []
         
         let octave = partGenotype.octave
         
@@ -78,7 +78,7 @@ struct AccompanimentPartComposer {
     }
     
     func composeFinale() -> ComposedPartSection {
-        var midiNoteData = [MIDINoteData]()
+        var midiNoteData: [MIDINoteData] = []
         
         let octave = partGenotype.octave
         

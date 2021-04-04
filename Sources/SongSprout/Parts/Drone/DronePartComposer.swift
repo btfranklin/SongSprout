@@ -32,7 +32,7 @@ struct DronePartComposer {
     }
     
     private func compose(duration: Duration) -> ComposedPartSection {
-        var midiNoteData = [MIDINoteData]()
+        var midiNoteData: [MIDINoteData] = []
         
         let octave = self.partGenotype.octave
         let pitch = Pitch(key: song.key, octave: octave)

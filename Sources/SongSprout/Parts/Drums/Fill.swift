@@ -20,7 +20,7 @@ struct Fill {
          on channel: PartChannel,
          allowSilentGap: Bool) {
         
-        var midiNoteData = [MIDINoteData]()
+        var midiNoteData: [MIDINoteData] = []
         
         let style: Style
         if allowSilentGap {

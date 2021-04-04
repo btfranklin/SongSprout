@@ -35,11 +35,11 @@ public struct BassDrumSubPartGenotype: Codable {
             placementCount = 8
         }
         
-        var measures = [[Double]]()
+        var measures: [[Double]] = []
         for _ in 1...uniqueMeasureCount {
             
             var remainingPlacements = placementCount
-            var measure = [Double]()
+            var measure: [Double] = []
             
             switch beatEmphasisStrategy {
             case .none:

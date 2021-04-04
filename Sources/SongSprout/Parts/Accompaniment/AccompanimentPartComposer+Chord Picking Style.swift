@@ -6,7 +6,7 @@ import DunesailerUtilities
 extension AccompanimentPartComposer {
     
     func composeNormalPhraseUsingChordPickingStyle() -> [MIDINoteData] {
-        var midiNoteData = [MIDINoteData]()
+        var midiNoteData: [MIDINoteData] = []
         
         for chordIndex in 0..<section.chordProgression.chordDescriptors.count {
             
@@ -28,7 +28,7 @@ extension AccompanimentPartComposer {
     }
 
     private func composePickedChord(for chord: Chord, withDuration duration: Duration) -> [MIDINoteData] {
-        var midiNoteData = [MIDINoteData]()
+        var midiNoteData: [MIDINoteData] = []
         
         let isAccented = Bool.random(probability: partGenotype.accentProbability)
         
@@ -46,7 +46,7 @@ extension AccompanimentPartComposer {
         var positionInCycle = PositionInCycle.one
         for placementLocation in stride(from: 0, to: duration.beats, by: 1.0) {
             
-            var pitches = [Pitch]()
+            var pitches: [Pitch] = []
             switch positionInCycle {
             case .one:
                 pitches.append(chord.pitches[0])
