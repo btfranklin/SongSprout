@@ -9,7 +9,6 @@ public class Orchestrion {
         case initialized
         case stopped
         case playing
-        case paused
     }
 
     public static let shared = Orchestrion()
@@ -108,23 +107,12 @@ public class Orchestrion {
             return
         }
 
-        sequencer?.tempo = tempo
-
-        switch playbackState {
-        case .initialized:
+        if playbackState == .initialized {
             song.populateTracks()
-            sequencer?.playFromStart()
-
-        case .stopped:
-            sequencer?.playFromStart()
-
-        case .paused:
-            sequencer?.play()
-
-        default:
-            fatalError("Received play command while in unsupported state: \(playbackState)")
         }
 
+        sequencer?.tempo = tempo
+        sequencer?.playFromStart()
         internalPlaybackState = .playing
     }
 
