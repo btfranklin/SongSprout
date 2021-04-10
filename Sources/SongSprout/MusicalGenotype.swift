@@ -140,7 +140,7 @@ public struct MusicalGenotype: Codable {
             }
         }
         
-        self.partIdentifiers = partIdentifiers.map {$0}
+        self.partIdentifiers = Array(partIdentifiers)
         self.drumsPartGenotype = drumsPartGenotype
         self.accompanimentPartGenotype = accompanimentPartGenotype
         self.leadPartGenotype = leadPartGenotype
