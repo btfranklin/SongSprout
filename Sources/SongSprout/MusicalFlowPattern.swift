@@ -36,7 +36,9 @@ public struct MusicalFlowPattern: Codable {
         // TODO restore intros in flow
         //hasIntro = Bool.random(probability: 20)
 hasIntro = false
-        hasBreakSection = Bool.random(probability: 20)
+        // TODO restore breaks in flow
+        //hasBreakSection = Bool.random(probability: 20)
+hasBreakSection = false
         let sectionalFormConfig = MusicalFlowPattern.sectionalFormConfigOptions.randomElement()!
         sectionalForm = sectionalFormConfig.designators
         sectionalDensities = sectionalFormConfig.densities
@@ -54,7 +56,7 @@ hasIntro = false
     }
     
     public func convertedIntoSectionDescriptors() -> [SectionDescriptor] {
-        var sectionDescriptors = [SectionDescriptor]()
+        var sectionDescriptors: [SectionDescriptor] = []
         
         if hasIntro {
             let introMeasureCount = Int.random(in: 1...2)

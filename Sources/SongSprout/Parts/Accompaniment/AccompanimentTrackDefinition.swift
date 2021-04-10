@@ -13,7 +13,7 @@ struct AccompanimentTrackDefinition: TrackDefinition {
         self.genotype = genotype
     }
     
-    func createNode() -> Node {
+    func makeNode() -> Node {
         let partSampler = MIDISampler(name: identifier.rawValue)
         do {
             let instrument = GeneralUserInstrumentDetails.shared.instrumentDetails[genotype.instrumentName]!

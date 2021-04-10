@@ -13,7 +13,7 @@ struct DroneTrackDefinition: TrackDefinition {
         self.genotype = genotype
     }
     
-    func createNode() -> Node {
+    func makeNode() -> Node {
         let drone = MIDISampler(name: identifier.rawValue)
         do {
             let instrument = GeneralUserInstrumentDetails.shared.instrumentDetails[genotype.instrumentName]!

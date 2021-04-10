@@ -13,7 +13,7 @@ struct BassTrackDefinition: TrackDefinition {
         self.genotype = genotype
     }
     
-    func createNode() -> Node {
+    func makeNode() -> Node {
         let bass = MIDISampler(name: identifier.rawValue)
         do {
             let instrument = GeneralUserInstrumentDetails.shared.instrumentDetails[genotype.instrumentName]!

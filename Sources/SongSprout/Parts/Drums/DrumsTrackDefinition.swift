@@ -13,7 +13,7 @@ struct DrumsTrackDefinition: TrackDefinition {
         self.genotype = genotype
     }
     
-    func createNode() -> Node {
+    func makeNode() -> Node {
         let drums = MIDISampler(name: identifier.rawValue)
         do {
             try drums.loadPercussiveSoundFont(GLOBAL_SOUNDFONT_NAME,
@@ -25,7 +25,7 @@ struct DrumsTrackDefinition: TrackDefinition {
         return drums
     }
     
-    func createRoute(from signalNode: Node, to mixerNode: Mixer) {
+    func connectRoute(from signalNode: Node, to mixerNode: Mixer) {
         
         let reverb: Node
           

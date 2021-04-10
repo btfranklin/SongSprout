@@ -6,14 +6,14 @@ import AudioKit
 
 class DroneTrackDefinitionTests: XCTestCase {
 
-    func testCreateNodeAndRoute() {
+    func testMakeNodeAndConnectRoute() {
         let partGenotype = DronePartGenotype()
         let trackDefinition = DroneTrackDefinition(for: partGenotype)
-        let partNode = trackDefinition.createNode()
+        let partNode = trackDefinition.makeNode()
 
         let testMixerName = "Test Mixer"
         let mixer = Mixer(name: testMixerName)
-        trackDefinition.createRoute(from: partNode, to: mixer)
+        trackDefinition.connectRoute(from: partNode, to: mixer)
 
         XCTAssertEqual(mixer.connectionTreeDescription,
         """

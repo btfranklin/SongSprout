@@ -54,10 +54,10 @@ class Song {
         }
     }
 
-    func createNodesAndTracks(to mixer: Mixer, in sequencer: Sequencer) {
+    func makeNodesAndTracks(to mixer: Mixer, in sequencer: Sequencer) {
         for trackDefinition in trackDefinitions {
-            let trackNode = trackDefinition.createNode()
-            trackDefinition.createRoute(from: trackNode, to: mixer)
+            let trackNode = trackDefinition.makeNode()
+            trackDefinition.connectRoute(from: trackNode, to: mixer)
 
             let track = sequencer.addTrack(for: trackNode)
             tracksByIdentifier[trackDefinition.identifier] = track

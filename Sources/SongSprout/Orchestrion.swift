@@ -94,7 +94,7 @@ public class Orchestrion {
         // Build all the playback infrastructure for the current genotype
         if let genotype = genotype {
             self.song = Song(from: genotype)
-            song!.createNodesAndTracks(to: mainMixer, in: sequencer!)
+            song!.makeNodesAndTracks(to: mainMixer, in: sequencer!)
         } else {
             self.song = nil
         }
