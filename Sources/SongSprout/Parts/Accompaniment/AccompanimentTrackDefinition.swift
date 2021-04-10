@@ -2,7 +2,7 @@
 
 import AudioKit
 
-struct AccompanimentTrackDefinition: TrackDefinition {
+struct AccompanimentTrackDefinition: TrackNodeProducer, SignalToMixerRouteConnector {
     
     let identifier: PartIdentifier = .accompaniment
     let volume = Volume(0.6)

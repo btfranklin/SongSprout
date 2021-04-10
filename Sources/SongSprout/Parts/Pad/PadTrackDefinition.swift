@@ -2,7 +2,7 @@
 
 import AudioKit
 
-struct PadTrackDefinition: TrackDefinition {
+struct PadTrackDefinition: TrackNodeProducer, SignalToMixerRouteConnector {
     
     let identifier: PartIdentifier = .pad
     let volume = Volume(0.4)

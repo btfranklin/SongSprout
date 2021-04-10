@@ -2,7 +2,7 @@
 
 import AudioKit
 
-struct DrumsTrackDefinition: TrackDefinition {
+struct DrumsTrackDefinition: TrackNodeProducer, SignalToMixerRouteConnector {
     
     let identifier: PartIdentifier = .drums
     let volume = Volume(0.7)

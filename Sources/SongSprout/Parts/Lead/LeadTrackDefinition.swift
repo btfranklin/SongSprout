@@ -2,7 +2,7 @@
 
 import AudioKit
 
-struct LeadTrackDefinition: TrackDefinition {
+struct LeadTrackDefinition: TrackNodeProducer, SignalToMixerRouteConnector {
     
     let identifier: PartIdentifier = .lead
     let volume = Volume(0.6)

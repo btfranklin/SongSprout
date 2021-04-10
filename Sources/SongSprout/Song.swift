@@ -14,29 +14,29 @@ class Song {
     var tracksByIdentifier: [PartIdentifier: SequencerTrack] = [:]
     var sectionsByDesignation: [SectionDescriptor.Designation : Section] = [:]
     
-    lazy var trackDefinitions: [TrackDefinition] = {
-        var trackDefinitions: [TrackDefinition] = []
+    lazy var trackNodeProducers: [TrackNodeProducer] = {
+        var trackNodeProducers: [TrackNodeProducer] = []
         
         for partIdentifier in genotype.partIdentifiers {
             switch partIdentifier {
             case .drums:
-                trackDefinitions.append(DrumsTrackDefinition(for: genotype.drumsPartGenotype!))
+                trackNodeProducers.append(DrumsTrackDefinition(for: genotype.drumsPartGenotype!))
             case .accompaniment:
-                trackDefinitions.append(AccompanimentTrackDefinition(for: genotype.accompanimentPartGenotype!))
+                trackNodeProducers.append(AccompanimentTrackDefinition(for: genotype.accompanimentPartGenotype!))
             case .lead:
-                trackDefinitions.append(LeadTrackDefinition(for: genotype.leadPartGenotype!))
+                trackNodeProducers.append(LeadTrackDefinition(for: genotype.leadPartGenotype!))
             case .bass:
-                trackDefinitions.append(BassTrackDefinition(for: genotype.bassPartGenotype!))
+                trackNodeProducers.append(BassTrackDefinition(for: genotype.bassPartGenotype!))
             case .pad:
-                trackDefinitions.append(PadTrackDefinition(for: genotype.padPartGenotype!))
+                trackNodeProducers.append(PadTrackDefinition(for: genotype.padPartGenotype!))
             case .arpeggiator:
-                trackDefinitions.append(ArpeggiatorTrackDefinition(for: genotype.arpeggiatorPartGenotype!))
+                trackNodeProducers.append(ArpeggiatorTrackDefinition(for: genotype.arpeggiatorPartGenotype!))
             case .drone:
-                trackDefinitions.append(DroneTrackDefinition(for: genotype.dronePartGenotype!))
+                trackNodeProducers.append(DroneTrackDefinition(for: genotype.dronePartGenotype!))
             }
         }
         
-        return trackDefinitions
+        return trackNodeProducers
     }()
     
     init(from genotype: MusicalGenotype) {
@@ -55,12 +55,15 @@ class Song {
     }
 
     func makeNodesAndTracks(to mixer: Mixer, in sequencer: Sequencer) {
-        for trackDefinition in trackDefinitions {
-            let trackNode = trackDefinition.makeNode()
-            trackDefinition.connectRoute(from: trackNode, to: mixer)
+        for trackNodeProducer in trackNodeProducers {
+            let trackNode = trackNodeProducer.makeNode()
 
-            let track = sequencer.addTrack(for: trackNode)
-            tracksByIdentifier[trackDefinition.identifier] = track
+            if let trackRouteConnector = trackNodeProducer as? SignalToMixerRouteConnector {
+                trackRouteConnector.connectRoute(from: trackNode, to: mixer)
+
+                let track = sequencer.addTrack(for: trackNode)
+                tracksByIdentifier[trackNodeProducer.identifier] = track
+            }
         }
     }
     

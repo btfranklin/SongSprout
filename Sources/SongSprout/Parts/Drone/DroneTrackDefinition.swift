@@ -2,7 +2,7 @@
 
 import AudioKit
 
-struct DroneTrackDefinition: TrackDefinition {
+struct DroneTrackDefinition: TrackNodeProducer, SignalToMixerRouteConnector {
     
     let identifier: PartIdentifier = .drone
     let volume = Volume(0.6)

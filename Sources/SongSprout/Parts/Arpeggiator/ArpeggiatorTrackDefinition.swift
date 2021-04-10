@@ -2,7 +2,7 @@
 
 import AudioKit
 
-struct ArpeggiatorTrackDefinition: TrackDefinition {
+struct ArpeggiatorTrackDefinition: TrackNodeProducer, SignalToMixerRouteConnector {
     
     let identifier: PartIdentifier = .arpeggiator
     let volume = Volume(0.5)

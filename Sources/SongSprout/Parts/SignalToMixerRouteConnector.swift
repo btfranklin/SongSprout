@@ -1,24 +1,22 @@
-//  Created by B.T. Franklin on 12/17/19.
+//  Created by B.T. Franklin on 4/9/21.
 
 import AudioKit
 
-protocol TrackDefinition {
+protocol SignalToMixerRouteConnector {
+
     var identifier: PartIdentifier { get }
     var volume: Volume { get }
-    
-    func makeNode() -> Node
+
     func connectRoute(from signalNode: Node, to mixerNode: Mixer)
 }
 
-extension TrackDefinition {
+extension SignalToMixerRouteConnector {
 
     func connectRoute(from signalNode: Node, to mixerNode: Mixer) {
         let compressor = Compressor(signalNode)
-        let localMixer = Mixer(compressor, name: "\(identifier.rawValue) Mixer")
+        let localMixer = Mixer(compressor, name: "\(self.identifier.rawValue) Mixer")
         localMixer.volume = self.volume.mixerValue
         mixerNode.addInput(localMixer)
     }
 
 }
-
-let GLOBAL_SOUNDFONT_NAME = "GeneralUser GS v1.471"

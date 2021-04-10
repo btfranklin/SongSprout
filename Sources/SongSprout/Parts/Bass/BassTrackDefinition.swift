@@ -2,7 +2,7 @@
 
 import AudioKit
 
-struct BassTrackDefinition: TrackDefinition {
+struct BassTrackDefinition: TrackNodeProducer, SignalToMixerRouteConnector {
     
     let identifier: PartIdentifier = .bass
     let volume = Volume(0.6)
