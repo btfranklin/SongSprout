@@ -120,9 +120,6 @@ public class Orchestrion {
         if let sequencer = sequencer {
             internalPlaybackState = .stopped
             sequencer.stop()
-            for track in sequencer.tracks {
-                track.stopPlayingNotes()
-            }
             sequencer.rewind()
         }
     }

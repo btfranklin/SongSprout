@@ -16,7 +16,7 @@ let package = Package(
     dependencies: [
         .package(name: "Dunesailer Utilities",
                  url: "https://github.com/dunesailer/Utilities.git",
-                 from: "2.0.2"),
+                 from: "2.0.4"),
         .package(name: "AudioKit",
                  url: "https://github.com/AudioKit/AudioKit.git",
                  .branch("v5-develop")),
