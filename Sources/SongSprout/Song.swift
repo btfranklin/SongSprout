@@ -39,7 +39,7 @@ class Song {
         return trackNodeProducers
     }()
     
-    init(from genotype: MusicalGenotype) {
+    init(genotype: MusicalGenotype) {
         self.genotype = genotype
         
         key = MusicalKeyName.allCases.randomElement()!
