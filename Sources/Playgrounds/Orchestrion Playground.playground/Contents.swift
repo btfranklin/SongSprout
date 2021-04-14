@@ -25,9 +25,11 @@ struct OrchestrionView: View {
 
         VStack {
             Text("Current Style").font(.largeTitle)
-            Text(styleGenotypeJSON)
-                .multilineTextAlignment(.leading)
-                .frame(width: 400, height: 500)
+            ScrollView {
+                Text(styleGenotypeJSON)
+                    .multilineTextAlignment(.leading)
+            }
+            .frame(width: 400, height: 500)
         }
         .padding()
         .border(Color.black, width: 2)
