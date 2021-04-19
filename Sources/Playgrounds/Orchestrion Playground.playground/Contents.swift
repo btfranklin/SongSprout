@@ -36,6 +36,7 @@ struct OrchestrionView: View {
             }
 
             Button("New song using style") {
+                Orchestrion.shared.stop()
                 Orchestrion.shared.prepare(style)
                 isSongCreated = true
             }
