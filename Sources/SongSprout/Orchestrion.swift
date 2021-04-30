@@ -77,7 +77,6 @@ public class Orchestrion {
             print("Error while starting AudioKit: \(error)")
         }
 
-        MIDI.sharedInstance.addListener(OrchestrionMIDIListener())
         mainMixer.volume = volume.mixerValue
 
         internalPlaybackState = .initialized
