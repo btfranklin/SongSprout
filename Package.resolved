@@ -5,9 +5,9 @@
         "package": "AudioKit",
         "repositoryURL": "https://github.com/AudioKit/AudioKit.git",
         "state": {
-          "branch": "v5-develop",
-          "revision": "d2cb11770af55ab3e145a5c7e3677d517f5af900",
-          "version": null
+          "branch": null,
+          "revision": "23cb5ee6b4f2de1af21851b34cc2b921ba159334",
+          "version": "5.0.1"
         }
       },
       {
