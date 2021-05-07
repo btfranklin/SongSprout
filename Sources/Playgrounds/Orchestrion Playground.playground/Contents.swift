@@ -53,7 +53,7 @@ struct OrchestrionView: View {
             .disabled(!isSongCreated)
         }
         .padding()
-        .border(Color.black, width: 2)
+        .border(.black, width: 2)
         .padding(.top)
 
         VStack {
@@ -65,7 +65,7 @@ struct OrchestrionView: View {
             .frame(width: 400, height: 500)
         }
         .padding()
-        .border(Color.black, width: 2)
+        .border(.black, width: 2)
     }
 }
 
