@@ -85,7 +85,7 @@ extension AccompanimentPartComposer {
                                                   duration: noteDuration,
                                                   position: positionCursor + .init(beats: offset)))
                         let currentPitchIndex = scalePitches.firstIndex(of: currentPitch)!
-                        let newPitchIndex = currentPitchIndex + (isMovingUpwards ? 1 : -1)
+                        let newPitchIndex = (0...scalePitches.count-1).clamp(currentPitchIndex + (isMovingUpwards ? 1 : -1))
                         currentPitch = scalePitches[newPitchIndex]
                     }
                     positionCursor += .init(beats: beatsToFill)
