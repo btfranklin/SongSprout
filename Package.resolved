@@ -6,8 +6,8 @@
         "repositoryURL": "https://github.com/AudioKit/AudioKit.git",
         "state": {
           "branch": null,
-          "revision": "23cb5ee6b4f2de1af21851b34cc2b921ba159334",
-          "version": "5.0.1"
+          "revision": "6ada4cb8d4b323ce38bbbcb74103bc2db0900cb2",
+          "version": "5.1.0"
         }
       },
       {
@@ -15,8 +15,8 @@
         "repositoryURL": "https://github.com/dunesailer/Utilities.git",
         "state": {
           "branch": null,
-          "revision": "e6790e52b3bfbf21f3ba3926c45fa8691d0f605a",
-          "version": "2.0.4"
+          "revision": "ff130ed7342410a41286d1897b438851aadbcfc0",
+          "version": "2.0.6"
         }
       }
     ]

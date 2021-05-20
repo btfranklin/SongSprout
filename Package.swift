@@ -1,4 +1,4 @@
-// swift-tools-version:5.3
+// swift-tools-version:5.4
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -6,20 +6,21 @@ import PackageDescription
 let package = Package(
     name: "SongSprout",
     platforms: [
-        .macOS(.v10_15), .iOS(.v13),
+        .macOS(.v11), .iOS(.v14),
     ],
     products: [
         .library(
             name: "SongSprout",
+            type: .static,
             targets: ["SongSprout"]),
     ],
     dependencies: [
         .package(name: "Dunesailer Utilities",
                  url: "https://github.com/dunesailer/Utilities.git",
-                 from: "2.0.4"),
+                 from: "2.0.6"),
         .package(name: "AudioKit",
                  url: "https://github.com/AudioKit/AudioKit.git",
-                 from: "5.0.1"),
+                 from: "5.1.0"),
     ],
     targets: [
         .target(
