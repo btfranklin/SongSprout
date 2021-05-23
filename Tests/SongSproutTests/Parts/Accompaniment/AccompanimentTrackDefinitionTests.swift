@@ -7,6 +7,7 @@ import AudioKit
 class AccompanimentTrackDefinitionTests: XCTestCase {
 
     func testMakeNodeAndConnectRoute() {
+
         let partGenotype = AccompanimentPartGenotype(complexity: .veryLow)
         let trackDefinition = AccompanimentTrackDefinition(for: partGenotype)
         let partNode = trackDefinition.makeNode()
@@ -14,6 +15,10 @@ class AccompanimentTrackDefinitionTests: XCTestCase {
         let testMixerName = "Test Mixer"
         let mixer = Mixer(name: testMixerName)
         trackDefinition.connectRoute(from: partNode, to: mixer)
+
+        let engine = AudioEngine()
+        engine.output = mixer
+        try! engine.start()
 
         XCTAssertEqual(mixer.connectionTreeDescription,
         """

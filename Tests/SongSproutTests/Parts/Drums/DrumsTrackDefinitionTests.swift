@@ -15,6 +15,10 @@ class DrumsTrackDefinitionTests: XCTestCase {
         let mixer = Mixer(name: testMixerName)
         trackDefinition.connectRoute(from: partNode, to: mixer)
 
+        let engine = AudioEngine()
+        engine.output = mixer
+        try! engine.start()
+
         XCTAssertTrue(mixer.connectionTreeDescription.hasPrefix(
         """
         AudioKit | ↳Mixer("\(testMixerName)")
