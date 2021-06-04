@@ -20,7 +20,7 @@ let package = Package(
                  from: "2.0.6"),
         .package(name: "AudioKit",
                  url: "https://github.com/AudioKit/AudioKit.git",
-                 .branch("main") ),
+                 from: "5.1.0"),
     ],
     targets: [
         .target(
