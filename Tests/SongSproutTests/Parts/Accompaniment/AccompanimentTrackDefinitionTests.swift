@@ -18,7 +18,12 @@ class AccompanimentTrackDefinitionTests: XCTestCase {
 
         let engine = AudioEngine()
         engine.output = mixer
-        try! engine.start()
+        do {
+            try engine.start()
+        } catch {
+            print("AudioKit Engine failed to start: \(error)")
+            return
+        }
 
         XCTAssertEqual(mixer.connectionTreeDescription,
         """
