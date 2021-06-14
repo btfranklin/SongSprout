@@ -1,6 +1,7 @@
 //  Created by B.T. Franklin on 12/11/19.
 
 import AudioKit
+import AudioKitEX
 
 class Song {
     

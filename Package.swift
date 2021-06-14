@@ -20,7 +20,10 @@ let package = Package(
                  from: "2.0.6"),
         .package(name: "AudioKit",
                  url: "https://github.com/AudioKit/AudioKit.git",
-                 from: "5.1.0"),
+                 from: "5.2.0"),
+        .package(name: "SoundpipeAudioKit",
+                 url: "https://github.com/AudioKit/SoundpipeAudioKit.git",
+                 from: "5.2.0"),
     ],
     targets: [
         .target(
@@ -30,6 +33,8 @@ let package = Package(
                          package: "Dunesailer Utilities"),
                 .product(name: "AudioKit",
                          package: "AudioKit"),
+                .product(name: "SoundpipeAudioKit",
+                         package: "SoundpipeAudioKit")
             ],
             resources: [
                 .process("Resources/GeneralUser GS v1.471.sf2")

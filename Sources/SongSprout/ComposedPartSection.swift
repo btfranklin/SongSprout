@@ -1,6 +1,7 @@
 //  Created by B.T. Franklin on 12/23/19.
 
 import AudioKit
+import AudioKitEX
 
 struct ComposedPartSection {
     

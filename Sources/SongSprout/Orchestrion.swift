@@ -2,6 +2,8 @@
 
 import Foundation
 import AudioKit
+import AudioKitEX
+import SoundpipeAudioKit
 
 public class Orchestrion {
 
