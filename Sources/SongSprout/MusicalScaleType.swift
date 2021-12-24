@@ -1,6 +1,6 @@
 //  Created by B.T. Franklin on 12/9/19.
 
-import DunesailerUtilities
+import ControlledChaos
 
 public enum MusicalScaleType: String, Codable {
     

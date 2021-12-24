@@ -1,6 +1,6 @@
 //  Created by B.T. Franklin on 1/1/20.
 
-import DunesailerUtilities
+import ControlledChaos
 import AudioKit
 
 public struct DrumsPartGenotype: Codable {

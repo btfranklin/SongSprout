@@ -1,7 +1,7 @@
 //  Created by B.T. Franklin on 5/7/20.
 
 import AudioKit
-import DunesailerUtilities
+import ControlledChaos
 
 extension AccompanimentPartComposer {
     
@@ -85,8 +85,10 @@ extension AccompanimentPartComposer {
                                                   duration: noteDuration,
                                                   position: positionCursor + .init(beats: offset)))
                         let currentPitchIndex = scalePitches.firstIndex(of: currentPitch)!
-                        let newPitchIndex = (0...scalePitches.count-1).clamp(currentPitchIndex + (isMovingUpwards ? 1 : -1))
-                        currentPitch = scalePitches[newPitchIndex]
+
+                        let proposedNewPitchIndex = currentPitchIndex + (isMovingUpwards ? 1 : -1)
+                        let clampedNewPitchIndex = min(max(proposedNewPitchIndex, 0), scalePitches.count-1)
+                        currentPitch = scalePitches[clampedNewPitchIndex]
                     }
                     positionCursor += .init(beats: beatsToFill)
                     

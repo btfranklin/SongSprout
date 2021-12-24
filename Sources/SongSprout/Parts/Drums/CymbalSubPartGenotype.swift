@@ -1,6 +1,6 @@
 //  Created by B.T. Franklin on 6/14/20.
 
-import DunesailerUtilities
+import ControlledChaos
 
 public struct CymbalSubPartGenotype: Codable {
     

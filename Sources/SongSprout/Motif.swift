@@ -1,6 +1,5 @@
 //  Created by B.T. Franklin on 2/18/20.
 
-import DunesailerUtilities
 import AudioKit
 
 struct Motif {

@@ -1,6 +1,6 @@
 //  Created by B.T. Franklin on 1/12/20.
 
-import DunesailerUtilities
+import ControlledChaos
 
 public struct HihatRideSubPartGenotype: Codable {
     

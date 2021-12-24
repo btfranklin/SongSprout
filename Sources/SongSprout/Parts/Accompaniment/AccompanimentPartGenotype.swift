@@ -1,6 +1,6 @@
 //  Created by B.T. Franklin on 3/1/20.
 
-import DunesailerUtilities
+import ControlledChaos
 
 public struct AccompanimentPartGenotype: Codable {
     

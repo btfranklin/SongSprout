@@ -6,8 +6,26 @@
         "repositoryURL": "https://github.com/AudioKit/AudioKit.git",
         "state": {
           "branch": null,
-          "revision": "4c3f5ef1b7d758609c7cfbc2d1f631fc45da04d1",
-          "version": "5.2.0"
+          "revision": "491ae3d76c64c848e308fb1f659099e3c82cd65b",
+          "version": "5.3.0"
+        }
+      },
+      {
+        "package": "AudioKitEX",
+        "repositoryURL": "https://github.com/AudioKit/AudioKitEX",
+        "state": {
+          "branch": null,
+          "revision": "214bedd90e9a4ff03f55c4dc3b918082b6a7ebeb",
+          "version": "5.3.0"
+        }
+      },
+      {
+        "package": "ControlledChaos",
+        "repositoryURL": "https://github.com/btfranklin/ControlledChaos.git",
+        "state": {
+          "branch": null,
+          "revision": "4b5476d112f2d92f76579e021210073cd9060e14",
+          "version": "1.1.1"
         }
       },
       {
@@ -24,17 +42,8 @@
         "repositoryURL": "https://github.com/AudioKit/SoundpipeAudioKit.git",
         "state": {
           "branch": null,
-          "revision": "8ab8858f2b3e8127c27ce1db978e026c9ee99c25",
-          "version": "5.2.0"
-        }
-      },
-      {
-        "package": "Dunesailer Utilities",
-        "repositoryURL": "https://github.com/dunesailer/Utilities.git",
-        "state": {
-          "branch": null,
-          "revision": "ff130ed7342410a41286d1897b438851aadbcfc0",
-          "version": "2.0.6"
+          "revision": "a23a27c6ebe5fdf1911559cd82d899bfc6a7eda5",
+          "version": "5.3.0"
         }
       }
     ]

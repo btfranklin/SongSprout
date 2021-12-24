@@ -1,7 +1,7 @@
 //  Created by B.T. Franklin on 12/8/19.
 
 import AudioKit
-import DunesailerUtilities
+import ControlledChaos
 
 public struct MusicalGenotype: Codable {
 

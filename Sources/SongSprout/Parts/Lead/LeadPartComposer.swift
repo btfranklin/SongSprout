@@ -1,7 +1,7 @@
 //  Created by B.T. Franklin on 4/20/20.
 
 import AudioKit
-import DunesailerUtilities
+import ControlledChaos
 
 struct LeadPartComposer {
     

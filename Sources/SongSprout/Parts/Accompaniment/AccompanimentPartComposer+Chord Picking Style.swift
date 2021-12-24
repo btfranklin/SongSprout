@@ -1,7 +1,7 @@
 //  Created by B.T. Franklin on 5/3/20.
 
 import AudioKit
-import DunesailerUtilities
+import ControlledChaos
 
 extension AccompanimentPartComposer {
     
