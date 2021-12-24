@@ -1,7 +1,6 @@
 # SongSprout
 
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/dunesailer/SongSprout/blob/master/LICENSE)
-[![Platform](https://img.shields.io/badge/in-swift5.4-orange.svg)](https://github.com/apple/swift)
-[![build](https://github.com/dunesailer/SongSprout/workflows/build/badge.svg)](https://github.com/dunesailer/SongSprout/actions?query=workflow%3Abuild)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/btfranklin/SongSprout/blob/main/LICENSE)
+[![build](https://github.com/btfranklin/SongSprout/workflows/build/badge.svg)](https://github.com/btfranklin/SongSprout/actions?query=workflow%3Abuild)
 
-Dunesailer Research's SongSprout music generation engine.
+B.T. Franklin's SongSprout music generation engine.
