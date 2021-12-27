@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "SongSprout",
     platforms: [
-        .macOS(.v11), .iOS(.v14), .tvOS(.v14), .watchOS(.v7)
+        .macOS(.v11), .iOS(.v14)
     ],
     products: [
         .library(
