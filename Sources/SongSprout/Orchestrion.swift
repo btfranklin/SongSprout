@@ -92,7 +92,7 @@ public class Orchestrion {
         sequencer = Sequencer()
 
         // Build all the playback infrastructure for the current genotype
-        if let genotype = genotype {
+        if let genotype {
             song = Song(genotype: genotype)
             song!.makeNodesAndTracks(to: mainMixer, in: sequencer!)
         } else {
@@ -108,7 +108,7 @@ public class Orchestrion {
             return
         }
 
-        if let sequencer = sequencer {
+        if let sequencer {
             if playbackState == .initialized {
                 song.populateTracks()
             }
@@ -120,7 +120,7 @@ public class Orchestrion {
     }
 
     public func stop() {
-        if let sequencer = sequencer {
+        if let sequencer {
             internalPlaybackState = .stopped
             sequencer.stop()
             sequencer.rewind()

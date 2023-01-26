@@ -59,7 +59,7 @@ struct AccompanimentPartComposer {
             let chordPlacement = section.chordPlacementMapPerPhrase.chordPlacements[chordIndex]
             
             let chord: Chord
-            if let firstChord = firstChord {
+            if let firstChord {
                 chord = firstChord.findClosestInversion(using: chordDescriptor)
                 
             } else {

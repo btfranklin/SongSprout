@@ -221,7 +221,7 @@ struct Motif {
                 noteNumber = pitches[chordPitchIndices[2]!+1].midiNoteNumber
             }
             
-            if let noteNumber = noteNumber {
+            if let noteNumber {
                 midiNoteData.append(.init(noteNumber: noteNumber,
                                           velocity: velocity,
                                           channel: channel.rawValue,
