@@ -1,4 +1,4 @@
-// swift-tools-version:5.4
+// swift-tools-version:5.7
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "SongSprout",
     platforms: [
-        .macOS(.v11), .iOS(.v14)
+        .macOS(.v12), .iOS(.v15)
     ],
     products: [
         .library(
@@ -15,15 +15,12 @@ let package = Package(
             targets: ["SongSprout"]),
     ],
     dependencies: [
-        .package(name: "ControlledChaos",
-                 url: "https://github.com/btfranklin/ControlledChaos.git",
-                 from: "1.1.1"),
-        .package(name: "AudioKit",
-                 url: "https://github.com/AudioKit/AudioKit.git",
-                 from: "5.3.0"),
-        .package(name: "SoundpipeAudioKit",
-                 url: "https://github.com/AudioKit/SoundpipeAudioKit.git",
-                 from: "5.3.0"),
+        .package(url: "https://github.com/btfranklin/ControlledChaos.git",
+                 from: "1.3.2"),
+        .package(url: "https://github.com/AudioKit/AudioKit.git",
+                 from: "5.5.8"),
+        .package(url: "https://github.com/AudioKit/SoundpipeAudioKit.git",
+                 from: "5.5.3"),
     ],
     targets: [
         .target(
