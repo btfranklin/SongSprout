@@ -18,9 +18,11 @@ let package = Package(
         .package(url: "https://github.com/btfranklin/ControlledChaos.git",
                  from: "1.3.2"),
         .package(url: "https://github.com/AudioKit/AudioKit.git",
-                 from: "5.5.8"),
+                 from: "5.6.2"),
+        .package(url: "https://github.com/AudioKit/AudioKitEX.git",
+                 from: "5.6.0"),
         .package(url: "https://github.com/AudioKit/SoundpipeAudioKit.git",
-                 from: "5.5.3"),
+                 from: "5.6.1"),
     ],
     targets: [
         .target(
@@ -30,6 +32,8 @@ let package = Package(
                          package: "ControlledChaos"),
                 .product(name: "AudioKit",
                          package: "AudioKit"),
+                .product(name: "AudioKitEX",
+                         package: "AudioKitEX"),
                 .product(name: "SoundpipeAudioKit",
                          package: "SoundpipeAudioKit")
             ],
