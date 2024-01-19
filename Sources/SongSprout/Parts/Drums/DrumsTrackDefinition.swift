@@ -1,6 +1,7 @@
 //  Created by B.T. Franklin on 12/17/19.
 
 import AudioKit
+import AudioKitEX
 import SoundpipeAudioKit
 
 struct DrumsTrackDefinition: TrackNodeProducer, SignalToMixerRouteConnector {
