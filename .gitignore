@@ -36,3 +36,7 @@ Package.pins
 *.xcodeproj
 .swiftpm
 .build/
+
+# Local trash
+.DS_Store
+
